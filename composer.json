@@ -1,0 +1,39 @@
+{
+    "name": "sooshiii/phpcord-webhooks",
+    "description": "A PHP wrapper for using Discord's webhook API",
+    "keywords": [
+        "discord", "api", "webhook", "wrapper"
+    ],
+    "homepage": "https://github.com/Sooshiii/phpcord-webhooks",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Gavin",
+            "homepage": "https://github.com/Sooshiii"
+        }
+    ],
+    "require": {
+        "php" : ">=7.0.0",
+        "guzzlehttp/guzzle": "^7.3",
+        "jms/serializer": "^3.12"
+    },
+    "require-dev": {
+        "phpunit/phpunit" : "4.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "DiscordWebhook\\MessageBuilder\\": "src",
+            "DiscordWebhook\\EmbedBuilder\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "DiscordWebhook\\MessageBuilder\\Test\\": "tests"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}
