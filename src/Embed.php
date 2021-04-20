@@ -63,7 +63,7 @@ class Embed
 
     /**
      * @var array $author Array containing the necessary params.
-     *    $footer = [
+     *    $author = [
      *      'name' => (string) author name
      *      'url'  => (string) image url
      *    ]
@@ -72,7 +72,7 @@ class Embed
 
     /**
      * @var array $fields Array containing the necessary params.
-     *    $footer = [
+     *    $fields = [
      *      [
      *          'name'   => (string) title text
      *          'value'  => (string) body text

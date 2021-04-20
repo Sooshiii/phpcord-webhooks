@@ -41,14 +41,7 @@ class Message
     public $tts = false;
 
     /**
-     * @var array $embeds Array of Embeds from \EmbedBuilder
-     *    $footer = [
-     *      [
-     *          'name'   => (string) title text
-     *          'value'  => (string) body text
-     *          'inline' => (bool)   decide if field is inline
-     *      ]
-     *    ]
+     * @var array Array of Embeds from EmbedBuilder
      */
     public $embeds;
 
