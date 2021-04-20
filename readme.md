@@ -49,12 +49,12 @@ $ phpunit
 
 ## Contributing
 
-Please see [CONTRIBUTING](https://github.com/thephpleague/:package_name/blob/master/CONTRIBUTING.md) for details.
+Please see [CONTRIBUTING](https://github.com/Sooshiii/phpcord-webhooks/blob/master/CONTRIBUTING.md) for details.
 
 ## Credits
 
 - [Gavin](https://github.com/Sooshiii)
-- [All Contributors](https://github.com/thephpleague/:package_name/contributors)
+- [All Contributors](https://github.com/Sooshiii/phpcord-webhooks/contributors)
 
 ## License
 
