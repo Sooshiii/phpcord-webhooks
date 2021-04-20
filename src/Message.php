@@ -8,7 +8,6 @@ use JMS\Serializer\Annotation\ExclusionPolicy;
 use JMS\Serializer\Annotation\Exclude;
 
 use GuzzleHttp\Client;
-use GuzzleHttp\RequestOptions;
 
 /**
  * @ExclusionPolicy("none")
@@ -16,58 +15,127 @@ use GuzzleHttp\RequestOptions;
 class Message
 {
     /**
+     * @var string 
      * @Exclude
      */
     private $webhook;
 
-    public $content, $username, $avatar_url = 'https://i.imgur.com/wSTFkRM.png';
+    /**
+     * @var string message body
+     */
+    public $content;
+
+    /**
+     * @var string
+     */
+    public $username;
+
+    /**
+     * @var string
+     */
+    public $avatar_url;
+
+    /**
+     * @var bool
+     */
     public $tts = false;
-    // array
+
+    /**
+     * @var array $embeds Array of Embeds from \EmbedBuilder
+     *    $footer = [
+     *      [
+     *          'name'   => (string) title text
+     *          'value'  => (string) body text
+     *          'inline' => (bool)   decide if field is inline
+     *      ]
+     *    ]
+     */
     public $embeds;
 
-    public function __construct()
+    /**
+     * Set webhook URL
+     *
+     * @param string $url
+     */
+    public function setWebhook($url)
     {
-    }
-
-    public function setWebhook($url) {
         $this->webhook = $url;
         return $this;
     }
 
-    public function setMessage($message) {
+    /**
+     * Set message body
+     *
+     * @param string $message
+     */
+    public function setMessage($message)
+    {
         $this->content = $message;
         return $this;
     }
 
-    public function setUsername($username) {
+    /**
+     * Set username 
+     *
+     * @param string $username
+     */
+    public function setUsername($username)
+    {
         $this->username = $username;
         return $this;
     }
 
-    public function enableTTS() {
+    /**
+     * Enable TTS
+     */
+    public function enableTTS()
+    {
         $this->tts = true;
         return $this;
     }
 
-    public function setAvatar($url) {
+    /**
+     * Set avatar image
+     *
+     * @param string $url
+     */
+    public function setAvatar($url)
+    {
         $this->avatar_url = $url;
         return $this;
     }
 
-    public function addEmbed($embed) {
-        $this->embeds[] = $embed;
-        $this->embeds = (array)array_values($this->embeds);
+    /**
+     * Add embed to message
+     *
+     * @param object $embed
+     */
+    public function addEmbed($embed)
+    {
+        $this->embeds[] = (array) $embed;
         return $this;
     }
 
-    public function buildJSON() {
+    /**
+     * Create JSON from class
+     */
+    public function buildJSON()
+    {
         $serializer = SerializerBuilder::create()->build();
         $json = $serializer->serialize($this, 'json', SerializationContext::create()->setSerializeNull(false));
         return $json;
     }
 
-    public function send($json = null) {
-        if($json == null) {
+
+    /**
+     * Send request to discord
+     *
+     * @param string $json null by default
+     * @return string response from webhook
+     */
+    public function send($json = null)
+    {
+        if ($json == null) {
             $json = $this->buildJSON();
         }
 
