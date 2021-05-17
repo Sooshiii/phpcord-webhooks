@@ -14,8 +14,8 @@ coming soon
 ``` php
 require_once "vendor/autoload.php";
 
-use DiscordWebhook\MessageBuilder\Message;
-use DiscordWebhook\EmbedBuilder\Embed;
+use DiscordWebhook\Message;
+use DiscordWebhook\Embed;
 
 $webhook = 'YOUR-WEBHOOK-URL-HERE';
 
