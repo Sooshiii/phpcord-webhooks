@@ -1,6 +1,6 @@
 <?php
 
-namespace DiscordWebhook\MessageBuilder;
+namespace DiscordWebhook;
 
 use JMS\Serializer\SerializerBuilder;
 use JMS\Serializer\SerializationContext;

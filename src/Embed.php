@@ -1,6 +1,6 @@
 <?php
 
-namespace DiscordWebhook\EmbedBuilder;
+namespace DiscordWebhook;
 
 class Embed
 {
