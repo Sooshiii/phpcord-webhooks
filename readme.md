@@ -2,12 +2,11 @@
 
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 
-This is a small WIP library for using discord webhooks. 
-It is currently NOT PSR COMPLIANT and cannot be intsalled with any package manager.
+This is a small WIP library for using discord webhooks.
 
 ## Install
 
-coming soon
+`composer require noynac/phpcord-webhooks`
 
 ## Usage
 
